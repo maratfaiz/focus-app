@@ -48,7 +48,8 @@ enum UnlockMethod: Codable, Hashable {
 }
 
 /// Правило блокировки.
-struct BlockRule: Codable, Identifiable, Hashable {
+/// Не Hashable: FamilyActivitySelection не поддерживает Hashable.
+struct BlockRule: Codable, Identifiable {
     enum Kind: Codable, Hashable {
         /// Быстрая блокировка «сейчас и до endDate».
         case quick(endDate: Date)
